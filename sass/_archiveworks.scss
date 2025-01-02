@@ -1,0 +1,64 @@
+@use "./base/base";
+@use "./base/reset";
+@use "./global" as *;
+
+//------------------------------
+// #region 
+
+.archive-works__item {
+    display: flex;
+    padding-bottom: 30px;
+    border-bottom: 1px solid $gray03;
+    align-items: flex-start;
+
+    opacity: 0;
+    transition: 1s ease;
+    @include mq("md") {
+        padding-bottom: 20px;
+    }
+}
+
+.archive-works__item:not(:first-child) {
+    margin-top: 30px;
+    @include mq("md") {
+        margin-top: 20px;
+    }
+}
+
+.archive-works__img {
+    width: 160px;
+    height: auto;
+    aspect-ratio: 1/1;
+}
+
+.archive-works__text-wrapper {
+    margin-left: 30px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.archive-works__information {
+    display: flex;
+    align-items: center;
+}
+
+.archive-works__tag-list {
+    display: flex;
+}
+
+.archive-works__date-wrapper {
+    margin-top: auto;
+}
+
+.archive-works__date {
+    font-weight: $bold;
+    font-size: 12px;
+    color: $gray02;
+    @include mq("md") {
+        font-size: 10px;
+    }
+}
+
+// #endregion

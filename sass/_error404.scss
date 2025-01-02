@@ -1,0 +1,107 @@
+@use "./base/base";
+@use "./base/reset";
+@use "./global" as *;
+
+//------------------------------
+// #region 404
+
+.error-mv {
+    margin: 250px 0 120px 0;
+    @include mq("md") {
+        margin: 120px 0 0 0;
+    }
+}
+
+.error-mv__block {
+    position: relative;
+}
+
+.error-mv__img {
+    aspect-ratio: 365/243;
+}
+
+.error {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 16%;
+}
+
+.error__title {
+    font-family: $second-font;
+    font-weight: $bold;
+    font-size: 70px;
+    color: $white;
+    @include mq("md") {
+        font-size: 35px;
+    }
+}
+
+.error__text {
+    margin-top: 20px;
+    font-weight: $medium;
+    line-height: 2.375;
+    color: $white;
+}
+
+.error-sp {
+    margin: 40px 0 80px 0;
+}
+
+.error__sp-text-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.error__sp-text {
+    font-size: 14px;
+    font-weight: $normal;
+    line-height: 2.285;
+    color: $black;
+}
+
+.error__button {
+    display: inline-block;
+    margin-top: 20px;
+    color: $white;
+    border: 1px solid $white;
+    border-radius: 4px;
+    padding: 12px 30px 12px 50px;
+    position: relative;
+}
+
+.error__button--sp {
+    margin-top: 40px;
+    color: $navy;
+    border: 1px solid $navy;
+    font-size: 14px;
+    width: 160px;
+}
+
+.error__button:hover {
+    opacity: 1;
+}
+
+.error__button::before {
+    position: absolute;
+    top: 45%;
+    left: 30px;
+    width: 6px;
+    height: 6px;
+    content: "";
+    transform: rotate(225deg);
+    border-top: 1px solid $white;
+    border-right: 1px solid $white;
+}
+
+.error__button--sp::before {
+    border-top: 1px solid $navy;
+    border-right: 1px solid $navy;
+ }
+
+.error__button:hover::before {
+    left: 25px;
+}
+

@@ -1,0 +1,167 @@
+@use "./base/base";
+@use "./base/reset";
+@use "./global" as *;
+
+//------------------------------
+// #region 制作実績 WP投稿記事部分
+
+// .single-works__inner {
+//     max-width: 890px;
+//     margin-inline: auto;
+//     padding: 0 20px;
+// }
+
+.single-works__inner {
+    max-width: 890px;
+    margin-inline: auto;
+    padding: 0 25px;
+    @include mq("md") {
+        padding: 0 20px;
+    }
+}
+
+.single-works__body {
+    width: 100%;
+    max-width: 840px;   // inheritの方がよさそうだがいったんこれでいく、後で見直し？
+    @include mq("md") {
+        padding: 0 10px;
+    }
+}
+
+.single-works__other {
+    margin-top: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.single-works__back {
+    display: inline-block;
+    border: 1px solid $navy02;
+    border-radius: 4px;
+    padding: 12px 86px 12px 101px;
+    position: relative;
+
+    font-size: 14px;
+    font-weight: $medium;
+    color: $navy02;
+}
+
+.single-works__back::before {
+    position: absolute;
+    top: 45%;
+    left: 86px;
+    width: 6px;
+    height: 6px;
+    content: "";
+    transform: rotate(225deg);
+    border-top: 1px solid $navy02;
+    border-right: 1px solid $navy02;
+}
+
+.single-works__back:hover {
+    opacity: 1;
+}
+
+.single-works__back:hover::before {
+    left: 81px;
+}
+
+// #endregion
+
+//------------------------------
+// #region 個別記事 WP投稿記事部分
+
+.single-works__content h1 {
+    font-size: 28px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    padding: 8px 16px;
+    border: 3px solid #67a7cc;
+}
+
+.single-works__content h2 {
+    font-size: 22px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    padding: 8px 16px;
+    background-color: $lightblue;
+    border-left: 3px solid $black;
+}
+
+.single-works__content h3 {
+    font-size: 18px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    padding: 0 16px 8px;
+    border-bottom: 1px solid $lightgray;
+    position: relative;
+}
+
+.single-works__content h3::before {
+    position: absolute;
+    content: '';
+    bottom: -1px;
+    left: 0;
+    width: 39.7%;
+    height: 1px;
+    background: $navy02;
+}
+
+.single-works__content p {
+    margin-bottom: 24px;
+    line-height: 2;
+    text-align: center;
+    @include mq("md") {
+        font-size: 14px;
+    }
+}
+
+.single-works__content a {
+    display: block;
+    text-decoration: underline;
+    color: #0072bc;
+}
+
+.single-works__content ul {
+    margin-bottom: 24px;
+}
+
+.single-works__content li {
+    position: relative;
+    padding-left: 1em;
+}
+
+.single-works__content li::after {
+    position: absolute;
+    top: 0.5em;
+    left: 0;
+    width: 6px;
+    height: 6px;
+    content: "";
+    border-radius: 3px;
+    background-color: $navy02;
+}
+
+.single-works__content li+ li {
+    margin-top: 1px;
+}
+
+.single-works__content pre {
+    white-space: pre-wrap;
+}
+
+.single-works__content figure {
+    width: auto;
+    max-width: 718.47px;
+}
+
+.single-works__content figcaption {
+
+}
+
+.single-works__content img {
+    max-width: inherit;
+}
+
+// #endregion

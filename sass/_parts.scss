@@ -1,0 +1,468 @@
+@use "./base/base";
+@use "./base/reset";
+@use "./global" as *;
+
+//------------------------------
+// #region 共通パーツ
+
+.txt-limit {
+    display: block; // 追加
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.post__fv {
+    // margin-top: 80px;
+    margin-bottom: 80px;
+}
+
+
+//------------------------------
+// #region 記事　月別
+
+.detail__archive li+ li {
+    margin-top: 4px;
+}
+
+.detail__archive a {
+    color: #000;
+}
+
+// #endregion
+
+//------------------------------
+// #region 記事一覧のページネーション
+
+// ページネーションの要素を横並びにする
+.nav-links {
+    margin-top: 56px;
+    display: flex;
+    gap: 10px;
+    @include mq("md") {
+        margin-top: 40px;
+        justify-content: center;
+    }
+}
+
+// 前へ、次へリンクのスタイル
+.pagination__arrow {
+    display: inline-block;
+    width: 11px;
+    height: 18px;
+}
+
+// それぞれのページ番号のスタイル
+.page-numbers {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    color: $black02;
+    background-color: $gray04;
+}
+
+// 現在のページ番号のCSS（色を反転させている）
+.page-numbers.current {
+    color: #fff;
+    background-color: $navy02;
+}
+
+// ボーダーラインを打ち消す
+.page-numbers.dots,
+.page-numbers.prev,
+.page-numbers.next {
+    border: none;
+    background-color: initial;
+}
+
+.page-numbers.prev {
+    @include mq("md") {
+        justify-content: left;
+    }
+}
+
+.page-numbers.next {
+    @include mq("md") {
+        justify-content: right;
+    }
+}
+
+// #endregion
+
+//------------------------------
+// #region 下層ページ パンくずリスト
+
+.breadcrumb {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin: 20px 60px 0 0;
+    font-family: $third-font;
+    font-size: 15px;
+    @include mq("md") {
+        font-size: 10px;
+        margin: 10px 10px 0 10px;
+    }
+}
+
+.breadcrumb__between {
+    display: inline-block;
+    width: 20px;
+    height: 1px;
+    margin: 0 8px;
+    background-color: $gray02;
+}
+
+.breadcrumb a {
+    color: $gray02;
+}
+
+// #endregion
+
+//------------------------------
+// #region 下層ページ タイトル・サブタイトル
+
+.lower-sub-title {
+    font-weight: $bold;
+    color: $navy02;
+    @include mq("md") {
+        font-size: 12px;
+    }
+}
+
+.lower-title {
+    font-family: $second-font;
+    font-weight: $bold;
+    font-size: 40px;
+    @include mq("md") {
+        font-size: 26px;
+    }
+    position: relative;
+    display: inline-block;
+}
+
+.lower-title::after {
+    content: "";
+    width: 60px;
+    height: 2px;
+    background-color: $black;
+
+    position: absolute;
+    top: 50%;
+    right: -80px;
+}
+
+// #endregion
+
+//------------------------------
+// #region 下層ページ ページ内リンク
+
+.lead__link {
+    color: $navy;
+    position: relative;
+    @include mq("md") {
+        font-size: 12px;
+    }
+}
+
+.lead__link::after {
+    position: absolute;
+    top: 35%;
+    right: -20px;
+    width: 6px;
+    height: 6px;
+    content: "";
+    transform: rotate(135deg);
+    border-top: 1px solid $navy;
+    border-right: 1px solid $navy;
+    @include mq("md") {
+        top: 30%;
+        right: -15px;
+    }
+}
+
+// #endregion
+
+//------------------------------
+// #region 下層ページ リードブロックのinner
+
+.lead-inner {
+    max-width: 880px;
+    padding: 0 20px;
+    margin-inline: auto;
+}
+
+// #endregion
+
+//------------------------------
+// #region 下層ページMV
+
+.lower-mv {
+    margin-top: 156px;
+    @include mq("md") {
+        margin-top: 110px;
+    }
+}
+
+.lower-mv__inner1 {
+    max-width: 1440px;
+    margin-inline: auto;
+}
+
+.lower-mv__inner2 {
+    max-width: 1295px;
+    padding-left: 25px;
+    margin-left: auto;
+    @include mq("md") {
+        padding-left: 10px;
+    }
+}
+
+.lower-mv__block {
+    position: relative;
+    opacity: 0;
+    transition: 1s ease;
+}
+
+.lower-mv__img {
+    height: 514px;
+    object-fit: cover;
+    @include mq("md") {
+        height: 280px;
+    }
+}
+
+.lower-mv__title-wrapper {
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: inline-block;
+    width: 500px;
+    height: 224px;
+    background-color: $white;
+    transition: 2s ease;
+    @include mq("md") {
+        width: 190px;
+        height: 130px;
+    }
+}
+
+.lower-mv__title {
+    margin-top: 16px;
+    margin-left: 50px;
+    font-family: $second-font;
+    font-weight: $bold;
+    font-size: 100px;
+    color: $black;
+    @include mq("md") {
+        margin-left: 18px;
+        font-size: 44px;
+    }
+}
+
+.lower-mv__sub-title {
+    margin-left: 50px;
+    font-weight: $bold;
+    font-size: 20px;
+    color: $black;
+    @include mq("md") {
+        margin-left: 18px;
+        font-size: 12px;
+    }
+}
+
+// #endregion
+
+//------------------------------
+// #region タイトルのスライドイン
+
+.slide_left {
+    transform: translateX(calc(-50vw - 50%));
+}
+
+.slide_right {
+    transform: translateX(calc(50vw + 50%));
+}
+.slide_right2 {
+    transform: translateX(calc(50vw + 50%));
+}
+.slide_right3 {
+    transform: translateX(calc(50vw + 50%));
+}
+
+.slide_show {
+    transform: translateX(0);
+}
+
+// #endregion
+
+//------------------------------
+// #region ふわっと出現
+
+.fade_down {
+    transform: translateY(-100px);
+}
+
+.fade_up {
+    transform: translateY(100px);
+}
+
+.fade_show {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+// #endregion
+
+//------------------------------
+// #region READ MOREリンク
+
+.more-link {
+    font-family: $third-font;
+    font-weight: $medium;
+    font-size: 14px;
+    color: $navy02;
+
+    display: block;
+    margin-right: 30px; // ★微調整必要
+
+    position: relative;
+}
+
+.more-link span {
+    position: absolute;
+    top: 50%;
+    right: -15px;   // ★微調整必要
+    width: 7px;
+    height: 7px;
+    content: "";
+    transform: rotate(45deg) translateY(-100%);
+    border-top: 1px solid $navy02;
+    border-right: 1px solid $navy02;
+}
+
+.more-link:hover span {
+    right: -20px;
+}
+
+.more-link:hover {
+    opacity: 1;
+}
+
+.more-link::after {
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    content: '';
+    width: 135%;    // ★微調整必要
+    height: 1px;
+    background: $navy02;
+    transform: scale(0, 1);
+    transform-origin: left top;
+    transition: transform .3s;
+}
+
+.more-link:hover::after {
+    transform: scale(1, 1);
+}
+
+// #endregion
+
+//------------------------------
+// #region 記事のタグ
+
+.tag {
+    font-weight: $medium;
+    font-size: 11px;
+    color: $tag-text;
+
+    display: inline-block;
+    padding: 4px 18px;
+
+    @include mq("md") {
+        font-size: 10px;
+        padding: 5px 15px;
+    }
+}
+
+.tag.tag--gray {
+    background-color: $tag-bg;
+}
+
+.tag.tag--white {
+    background-color: $white;
+}
+
+// #endregion
+
+//------------------------------
+// #region インナー
+
+.inner {
+    max-width: 1150px;
+    margin-inline: auto;
+    padding: 0 25px;
+    @include mq("md") {
+        padding: 0 20px;
+    }
+}
+
+.inner.inner--sp-padding-none {
+    @include mq("md") {
+        padding: 0;
+    }
+}
+
+// #endregion
+
+//------------------------------
+// #region タイトル
+
+.title {
+    font-family: $second-font;
+    font-weight: $bold;
+    font-size: 70px;
+    color: $black;
+    @include mq("md") {
+        font-size: 38px;
+    }
+}
+
+// #endregion
+
+//------------------------------
+// #region SP表示・非表示
+
+.md-none {
+    @include mq("md") {
+        display: none;
+    }
+}
+
+.md-show {
+    display: none;
+    @include mq("md") {
+        display: block;
+    }
+}
+
+.sp-none {
+    @include mq("sp") {
+        display: none;
+    }
+}
+
+.sp-show {
+    display: none;
+    @include mq("sp") {
+        display: block;
+    }
+}
+
+// #endregion
+
+
+// #endregion

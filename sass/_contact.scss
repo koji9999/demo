@@ -1,0 +1,464 @@
+@use "./base/base";
+@use "./base/reset";
+@use "./global" as *;
+
+
+//------------------------------
+// #region 問い合わせ完了
+
+.contact-contents__main-title {
+    font-family: $second-font;
+    font-weight: $bold;
+    font-size: 40px;
+    @include mq("md") {
+        font-size: 24px;
+    }
+}
+
+.contact-contents__sub-title {
+    margin-top: 20px;
+    font-weight: $medium;
+    font-size: 18px;
+    @include mq("md") {
+        margin-top: 10px;
+        font-size: 14px;
+    }
+}
+
+.contact-complete__text {
+    margin-top: 40px;
+    @include mq("md") {
+        margin-top: 30px;
+    }
+}
+
+.contact-complete__button-wrapper {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact-back-top__button {
+    display: inline-block;
+    border: 1px solid $navy;
+    border-radius: 4px;
+    padding: 20px 185px;
+    position: relative;
+    font-size: 18px;
+    font-weight: $medium;
+    color: $white;
+    background-color: $navy;
+    @include mq("md") {
+        font-size: 14px;
+        padding: 11.5px 110px;
+    }
+}
+
+.contact-back-top__button::before {
+    position: absolute;
+    top: 45%;
+    left: 170px;
+    width: 6px;
+    height: 6px;
+    content: "";
+    -webkit-transform: rotate(225deg);
+            transform: rotate(225deg);
+    border-top: 1px solid $white;
+    border-right: 1px solid $white;
+    @include mq("md") {
+        left: 95px;
+    }
+}
+
+.contact-back-top__button:hover {
+    opacity: 1;
+}
+
+.contact-back-top__button:hover::before {
+    left: 165px;
+    @include mq("md") {
+        left: 90px;
+    }
+}
+
+
+//------------------------------
+// #region 問い合わせ確認
+
+.contact-confirm-contents__inner {
+    max-width: 720px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-inline: auto;
+}
+
+.contact-confirm-contents__text {
+    @include mq("md") {
+        font-size: 14px;
+    }
+}
+
+.contact-confirm-body {
+    margin-top: 100px;
+    @include mq("md") {
+        margin-top: 40px;
+    }
+}
+
+.contact__item {
+    display: flex;
+    @include mq("md") {
+        flex-direction: column;
+    }
+}
+
+.contact__item:not(:first-child) {
+    margin-top: 42px;
+    @include mq("md") {
+        margin-top: 30px;
+    }
+}
+
+.contact__term {
+    min-width: 192px;
+
+    font-size: 15px;
+    font-weight: $medium;
+}
+
+.contact__required {
+    color: #e20000;
+}
+
+.contact__definition {
+    width: 100%;
+    font-size: 14px;
+    @include mq("md") {
+        margin-top: 10px;
+    }
+}
+
+.contact__definition--tall {
+    line-height: 2.285;
+}
+
+.contact__buttons {
+    margin-top: 40px;
+    display: flex;
+    @include mq("md") {
+        justify-content: center;
+    }
+}
+
+.contact__back-button {
+    display: inline-block;
+    width: 280px;
+    padding: 20px;
+    transition: opacity 0.3s;
+    color: $navy;
+    border: 2px solid $navy;
+    border-radius: 4px;
+    background-color: $white;
+    font-size: 18px;
+    font-weight: $medium;
+    &:hover {
+        transition: opacity 0.3s;
+        opacity: 0.7;
+    }
+    @include mq("md") {
+        font-size: 14px;
+        padding: 11.5px;
+        width: 151px;
+    }
+}
+
+.contact__submit-input {
+    margin-left: 80px;
+
+    display: inline-block;
+    width: 280px;
+    padding: 20px;
+    transition: opacity 0.3s;
+    color: $white;
+    border-radius: 4px;
+    background-color: $navy;
+    font-size: 18px;
+    font-weight: $medium;
+    &:hover {
+        transition: opacity 0.3s;
+        opacity: 0.7;
+    }
+    @include mq("md") {
+        margin-left: 23px;
+        font-size: 14px;
+        padding: 11.5px;
+        width: 151px;
+    }
+}
+
+// #endregion
+
+
+//------------------------------
+// #region コンタクト
+
+.contact-contents {
+    margin: 60px 0 120px;
+    @include mq("md") {
+        margin: 30px 0 80px;
+    }
+}
+
+.contact-contents-complete {
+    margin: 60px 0 120px;
+    @include mq("md") {
+        margin: 70px 0 80px;
+    }
+}
+
+.contact-contents__inner {
+    max-width: 680px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-inline: auto;
+}
+
+.contact-contents__text {
+    line-height: 2.375;
+    @include mq("md") {
+        font-size: 14px;
+        line-height: 2.285;
+    }
+}
+
+.contact-body {
+    margin-top: 100px;
+    @include mq("md") {
+        margin-top: 40px;
+    }
+}
+
+// #endregion
+
+
+// お問い合わせ入力
+
+.form__list {
+    margin-top: 40px;
+  }
+
+.form__field+ .form__field,
+.form__acceptance {
+    margin-top: 24px;
+}
+
+.form__label {
+    font-size: 15px;
+    font-weight: $medium;
+}
+
+.form__required {
+    color: #e20000;
+}
+
+.form__remarks {
+    margin-left: 20px;
+    font-size: 15px;
+    font-weight: $normal;
+    @include mq("md") {
+        display: block;
+        margin-left: 0;
+        margin-top: 10px;
+        font-size: 14px;
+    }
+}
+
+.form__input::placeholder {
+    color: #a9a9a9;
+}
+
+.form__textarea {
+    height: 160px;
+}
+
+.form__input,
+.form__select,
+.form__textarea,
+.form__acceptance-text {
+    font-size: 14px;
+    width: 100%;
+    padding: 12px;
+    // border: 1px solid #000;
+    border: 1px solid $gray03;
+    border-radius: 4px;
+}
+
+.form__acceptance-text {
+    overflow-y: auto;
+    height: 120px;
+    background-color: #f2f2f2;
+}
+
+.form__select {
+    padding-right: 35px;
+}
+
+.form__data-select {
+    position: relative;
+}
+
+.form__data-select::after {
+    position: absolute;
+    top: 46%;
+    right: 15px;
+    width: 10px;
+    height: 10px;
+    content: "";
+    transform: translateY(-50%) rotate(135deg);
+    border-top: solid 2px #000;
+    border-right: solid 2px #000;
+}
+
+.form__data-radio {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.form__data,
+.form__data-radio,
+.form__data-select,
+.form__data-check {
+    margin-top: 10px;
+}
+
+.form__privacy-wrapper {
+    display: flex;
+}
+
+.form__privacy-wrapper p {
+    margin-right: 3px;
+}
+
+.wpcf7-list-item {
+    margin: 0;
+}
+
+.wpcf7-form-control-wrap[data-name="radio-category"]
+.wpcf7-list-item+ .wpcf7-list-item {
+    margin-left: 20px;
+}
+
+.wpcf7-form-control-wrap[data-name="radio-category"] .wpcf7-list-item-label {
+    position: relative;
+    display: inline-block;
+    padding-left: 16px;
+}
+
+.wpcf7-form-control-wrap[data-name="radio-category"]
+.wpcf7-list-item-label::before {
+    position: absolute;
+    top: 56%;
+    left: 0;
+    width: 14px;
+    height: 14px;
+    content: "";
+    transform: translateY(-50%);
+    border: 1px solid #000;
+    border-radius: 7px;
+}
+
+.wpcf7-form-control-wrap[data-name="radio-category"]
+.wpcf7-list-item-label::after {
+    position: absolute;
+    top: 56%;
+    left: 3px;
+    width: 8px;
+    height: 8px;
+    content: "";
+    transform: translateY(-50%);
+    opacity: 0;
+    border-radius: 4px;
+    background-color: #000;
+}
+
+.wpcf7-form-control-wrap[data-name="radio-category"]
+.wpcf7-list-item
+input:checked+ .wpcf7-list-item-label::after {
+    opacity: 1;
+}
+
+.wpcf7-form-control-wrap[data-name="privacy"] .wpcf7-list-item-label {
+    position: relative;
+    display: inline-block;
+    padding-left: 24px;
+
+    @include mq("md") {
+        font-size: 14px;
+    }
+}
+
+.wpcf7-form-control-wrap[data-name="privacy"] .wpcf7-list-item-label::before {
+    position: absolute;
+    top: 3.25px;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    content: "";
+    border: 1px solid #000;
+    border-radius: 3px;
+}
+
+.wpcf7-form-control-wrap[data-name="privacy"] .wpcf7-list-item-label::after {
+    position: absolute;
+    top: 9.25px;
+    left: 5px;
+    width: 10px;
+    height: 5px;
+    content: "";
+    transform: rotate(-45deg);
+    opacity: 0;
+    border-bottom: 2px solid #000;
+    border-left: 2px solid #000;
+}
+
+.form__checkbox:checked+ .wpcf7-list-item-label::after {
+    opacity: 1;
+}
+
+.form__submit-button {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.form__submit-input {
+    display: inline-block;
+    width: 100%;
+    max-width: 446px;
+    padding: 20px;
+    transition: opacity 0.3s;
+    color: #fff;
+    border-radius: 4px;
+    background-color: $navy;
+
+    font-size: 18px;
+    font-weight: $medium;
+
+    &:hover {
+        transition: opacity 0.3s;
+        opacity: 0.7;
+    }
+
+    @include mq("md") {
+        max-width: 260px;
+        padding: 12px;
+        font-size: 14px;
+    }
+}
+
+// ボタン位置が左に寄る
+// 検証ツールで確認すると以下クラスがボタン右にあり
+// 余計に左に寄っていたのでmarginを0に上書きして調整
+.wpcf7-spinner {
+    margin: 0;
+}

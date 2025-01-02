@@ -1,9 +1,15 @@
 @use "./base/base";
 @use "./base/reset";
-@use "./module/top";
 @use "./module/header";
-@use "./module/inner";
-@use "./module/title";
-@use "./module/section-title";
-@use "./module/tab";
+@use "./module/footer";
 @use "./global" as *;
+
+@use "./top.scss";
+@use "./about.scss";
+@use "./service.scss";
+@use "./single.scss";
+@use "./archiveworks.scss";
+@use "./singleworks.scss";
+@use "./contact.scss";
+@use "./error404.scss";
+@use "./parts.scss";

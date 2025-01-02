@@ -1,8 +1,8 @@
 @use "sass:math";
 // 文字フォントの種類
-$base-font: "";
-$second-font: "";
-$third-font: "";
+$base-font: "Noto Sans JP", sans-serif;
+$second-font: "Oswald", sans-serif;
+$third-font: "Roboto", sans-serif;
 
 // 文字の太さ
 $regular: 300;
