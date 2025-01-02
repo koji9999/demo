@@ -163,9 +163,12 @@
                       </div>
 
                       <!-- 日付 -->
-                      <div class="archive-works__date-wrapper">
+                      <!-- <div class="archive-works__date-wrapper">
                         <time class="archive-works__date" datetime="<?php echo get_the_date('Y-m-d'); ?>"><?php echo get_the_date('Y.m.d'); ?></time>
-                      </div>
+                      </div> -->
+
+                      <time class="archive-works__date" datetime="<?php echo get_the_date('Y-m-d'); ?>"><?php echo get_the_date('Y.m.d'); ?></time>
+
 
                     </div>
 
