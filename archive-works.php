@@ -119,61 +119,67 @@
               <?php if ($the_query->have_posts()) : ?>
                 <ul class="news__list">
                   <?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
-                  <li class="archive-works__item fade_down">
 
-                    <?php the_post_thumbnail( 'full', ['class' => 'archive-works__img']); ?>
+                    <li class="archive-works__item fade_down">
 
-                    <div class="archive-works__text-wrapper">
+                      <a href="<?php the_permalink(); ?>" class="archive-works__item-link">
 
-                      <!-- カテゴリー ＋ タイトル -->
-                      <div class="archive-works__text-upper">
+                        <?php the_post_thumbnail( 'full', ['class' => 'archive-works__img']); ?>
 
-                        <div class="archive-works__information">
-                          <!-- カテゴリー -->
-                          <ul class="news__tag-list">
+                        <div class="archive-works__text-wrapper">
 
-                            <?php
-                              $taxonomy_terms = get_the_terms($post->id, 'genre');
-                              if ( ! empty( $taxonomy_terms ) ) {
-                                $limit = 5; // 表示するカテゴリーの数を指定
-                                $count = 0;
-                                foreach( $taxonomy_terms as $taxonomy_term ) {
-                                  if ($count < $limit) {
-                                    echo '<li class="news__tag-item">';
-                                    echo '<span class="news__category tag tag--gray">' . esc_html($taxonomy_term->name) . '</span>';
-                                    echo '</li>';
-                                    $count++;
-                                  } else {
-                                    break;  // 制限に達したらループを抜ける
+                          <!-- カテゴリー ＋ タイトル -->
+                          <div class="archive-works__text-upper">
+
+                            <div class="archive-works__information">
+                              <!-- カテゴリー -->
+                              <ul class="news__tag-list">
+
+                                <?php
+                                  $taxonomy_terms = get_the_terms($post->id, 'genre');
+                                  if ( ! empty( $taxonomy_terms ) ) {
+                                    $limit = 5; // 表示するカテゴリーの数を指定
+                                    $count = 0;
+                                    foreach( $taxonomy_terms as $taxonomy_term ) {
+                                      if ($count < $limit) {
+                                        echo '<li class="news__tag-item">';
+                                        echo '<span class="news__category tag tag--gray">' . esc_html($taxonomy_term->name) . '</span>';
+                                        echo '</li>';
+                                        $count++;
+                                      } else {
+                                        break;  // 制限に達したらループを抜ける
+                                      }
+                                    }
                                   }
-                                }
-                              }
-                            ?>
+                                ?>
 
-                          </ul>
+                              </ul>
+                            </div>
+
+                            <!-- 記事タイトル -->
+                            <div class="news__link">
+                              <!-- <a href="<?php the_permalink(); ?>" class="news__link-text txt-limit">
+                                <?php the_title(); ?>
+                              </a> -->
+                              <div class="news__link-text txt-limit">
+                                <?php the_title(); ?>
+                              </div>
+                            </div>
+
+                          </div>
+
+                          <!-- 日付 -->
+                          <!-- <div class="archive-works__date-wrapper">
+                            <time class="archive-works__date" datetime="<?php echo get_the_date('Y-m-d'); ?>"><?php echo get_the_date('Y.m.d'); ?></time>
+                          </div> -->
+                          <time class="archive-works__date" datetime="<?php echo get_the_date('Y-m-d'); ?>"><?php echo get_the_date('Y.m.d'); ?></time>
+
                         </div>
 
-                        <!-- 記事タイトル -->
-                        <div class="news__link">
-                          <a href="<?php the_permalink(); ?>" class="news__link-text txt-limit">
-                            <?php the_title(); ?>
-                          </a>
-                        </div>
+                      </a>
 
-                      </div>
+                    </li>
 
-                      <!-- 日付 -->
-                      <!-- <div class="archive-works__date-wrapper">
-                        <time class="archive-works__date" datetime="<?php echo get_the_date('Y-m-d'); ?>"><?php echo get_the_date('Y.m.d'); ?></time>
-                      </div> -->
-
-                      <time class="archive-works__date" datetime="<?php echo get_the_date('Y-m-d'); ?>"><?php echo get_the_date('Y.m.d'); ?></time>
-
-
-                    </div>
-
-                  </li>
-                  <!-- </li> -->
                   <?php endwhile; ?>
                   <?php wp_reset_postdata(); ?>
                 </ul>

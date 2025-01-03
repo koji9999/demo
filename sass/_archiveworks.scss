@@ -9,7 +9,7 @@
     display: flex;
     padding-bottom: 30px;
     border-bottom: 1px solid $gray03;
-    align-items: flex-start;
+    // align-items: flex-start;
 
     opacity: 0;
     transition: 1s ease;
@@ -23,6 +23,19 @@
     @include mq("md") {
         margin-top: 20px;
     }
+}
+
+.archive-works__item-link {
+    display: flex;
+    width: 100%;
+}
+
+.archive-works__item-link:hover {
+    opacity: 1;
+}
+
+.archive-works__item-link:hover .news__link::after {
+    transform: scale(1, 1);
 }
 
 .archive-works__img {
@@ -48,9 +61,13 @@
     display: flex;
 }
 
-.archive-works__date-wrapper {
-    margin-top: auto;
-}
+// ★削除する（以下使用箇所確認後）
+//   ● archive-works.php	Works一覧
+//   ● taxonomy.php		    Worksカテゴリ一覧
+//   ● front-page.php	    TOP
+// .archive-works__date-wrapper {
+//     margin-top: auto;
+// }
 
 .archive-works__date {
     margin-top: auto;

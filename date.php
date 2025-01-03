@@ -40,6 +40,8 @@
                 <?php while (have_posts()) : the_post(); ?>
                   <li class="news__item fade_down">
 
+                    <a href="<?php the_permalink(); ?>" class="archive-works__item-link">
+
                       <div class="news__text-wrapper">
                         <div class="news__information">
                           <!-- 日付 -->
@@ -76,12 +78,17 @@
 
                         <!-- 記事タイトル -->
                         <div class="news__link">
-                          <a href="<?php the_permalink(); ?>" class="news__link-text txt-limit">
+                          <!-- <a href="<?php the_permalink(); ?>" class="news__link-text txt-limit">
                             <?php the_title(); ?>
-                          </a>
+                          </a> -->
+                          <div class="news__link-text txt-limit">
+                            <?php the_title(); ?>
+                          </div>
                         </div>
 
                       </div>
+
+                    </a>
 
                   </li>
                 <?php endwhile; ?>

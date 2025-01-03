@@ -132,61 +132,70 @@
         <ul class="works__list">
           <?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
           <li class="works__card">
-          <div class="works__card-inner fade_down">
+            <div class="works__card-inner fade_down">
 
-              <?php the_post_thumbnail( 'full', ['class' => 'works__img']); ?>
+              <a href="<?php the_permalink(); ?>" class="archive-works__item-link">
 
-              <div class="works__card-body">
+                <?php the_post_thumbnail( 'full', ['class' => 'works__img']); ?>
 
-                <!-- カテゴリー ＋ タイトル -->
-                <div class="archive-works__text-upper">
+                <div class="works__card-body">
 
-                  <div class="archive-works__information">
-                    <!-- カテゴリー -->
-                    <ul class="news__tag-list">
+                  <!-- カテゴリー ＋ タイトル -->
+                  <div class="archive-works__text-upper">
 
-                      <?php
-                        $taxonomy_terms = get_the_terms($post->id, 'genre');
-                        if ( ! empty( $taxonomy_terms ) ) {
-                          $limit = 5; // 表示するカテゴリーの数を指定
-                          $count = 0;
-                          foreach( $taxonomy_terms as $taxonomy_term ) {
-                            if ($count < $limit) {
-                              echo '<li class="news__tag-item">';
-                              echo '<span class="news__category tag tag--gray">' . esc_html($taxonomy_term->name) . '</span>';
-                              echo '</li>';
-                              $count++;
-                            } else {
-                              break;  // 制限に達したらループを抜ける
+                    <div class="archive-works__information">
+                      <!-- カテゴリー -->
+                      <ul class="news__tag-list">
+
+                        <?php
+                          $taxonomy_terms = get_the_terms($post->id, 'genre');
+                          if ( ! empty( $taxonomy_terms ) ) {
+                            $limit = 5; // 表示するカテゴリーの数を指定
+                            $count = 0;
+                            foreach( $taxonomy_terms as $taxonomy_term ) {
+                              if ($count < $limit) {
+                                echo '<li class="news__tag-item">';
+                                echo '<span class="news__category tag tag--gray">' . esc_html($taxonomy_term->name) . '</span>';
+                                echo '</li>';
+                                $count++;
+                              } else {
+                                break;  // 制限に達したらループを抜ける
+                              }
                             }
                           }
-                        }
-                      ?>
+                        ?>
 
-                    </ul>
+                      </ul>
+                    </div>
+
+                    <!-- 記事タイトル -->
+                    <div class="news__link">
+                      <!-- <a href="<?php the_permalink(); ?>" class="news__link-text txt-limit">
+                        <?php the_title(); ?>
+                      </a> -->
+                      <div class="news__link-text txt-limit">
+                        <?php the_title(); ?>
+                      </div>
+                    </div>
+
+                    <!-- 記事抜粋 -->
+                    <div class="works__card-text md-none">
+                      <p><?php the_excerpt(); ?></p>
+                    </div>
+
                   </div>
 
-                  <!-- 記事タイトル -->
-                  <div class="news__link">
-                    <a href="<?php the_permalink(); ?>" class="news__link-text txt-limit">
-                      <?php the_title(); ?>
-                    </a>
-                  </div>
-
-                  <!-- ★記事本文 -->
-                  <div class="works__card-text md-none">
-                    <?php the_content(); ?>
-                  </div>
-
-                </div>
-
-                <!-- 日付 -->
-                <div class="archive-works__date-wrapper">
+                  <!-- 日付 -->
+                  <!-- <div class="archive-works__date-wrapper">
+                    <time class="archive-works__date" datetime="<?php echo get_the_date('Y-m-d'); ?>"><?php echo get_the_date('Y.m.d'); ?></time>
+                  </div> -->
                   <time class="archive-works__date" datetime="<?php echo get_the_date('Y-m-d'); ?>"><?php echo get_the_date('Y.m.d'); ?></time>
+
                 </div>
 
-              </div>
+              </a>
 
+            </div>
           </li>
           <?php endwhile; ?>
           <?php wp_reset_postdata(); ?>
@@ -294,48 +303,55 @@
                   <?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
                     <li class="news__item fade_down">
 
-                      <div class="news__text-wrapper">
-                        <div class="news__information">
-                          <!-- 日付 -->
-                          <time class="news__date" datetime="<?php echo get_the_date('Y-m-d'); ?>"><?php echo get_the_date('Y.m.d'); ?></time>
+                      <a href="<?php the_permalink(); ?>" class="archive-works__item-link">
 
-                          <!-- カテゴリー -->
-                          <div class="news__tag-list-wrapper">
+                        <div class="news__text-wrapper">
+                          <div class="news__information">
+                            <!-- 日付 -->
+                            <time class="news__date" datetime="<?php echo get_the_date('Y-m-d'); ?>"><?php echo get_the_date('Y.m.d'); ?></time>
 
-                            <ul class="news__tag-list">
+                            <!-- カテゴリー -->
+                            <div class="news__tag-list-wrapper">
 
-                              <?php
-                              $categories = get_the_category();
-                              if (!empty($categories)) {
-                                $limit = 5; // 表示するカテゴリーの数を指定
-                                $count = 0;
-                                foreach ($categories as $category) {
-                                  if ($count < $limit) {
-                                    echo '<li class="news__tag-item">';
-                                    echo '<span class="news__category tag tag--white">' . esc_html($category->name) . '</span>';
-                                    echo '</li>';
-                                    $count++;
-                                  } else {
-                                    break;  // 制限に達したらループを抜ける
+                              <ul class="news__tag-list">
+
+                                <?php
+                                $categories = get_the_category();
+                                if (!empty($categories)) {
+                                  $limit = 5; // 表示するカテゴリーの数を指定
+                                  $count = 0;
+                                  foreach ($categories as $category) {
+                                    if ($count < $limit) {
+                                      echo '<li class="news__tag-item">';
+                                      echo '<span class="news__category tag tag--white">' . esc_html($category->name) . '</span>';
+                                      echo '</li>';
+                                      $count++;
+                                    } else {
+                                      break;  // 制限に達したらループを抜ける
+                                    }
                                   }
                                 }
-                              }
-                              ?>
+                                ?>
 
-                            </ul>
+                              </ul>
 
+                            </div>
+
+                          </div>
+
+                          <!-- 記事タイトル -->
+                          <div class="news__link">
+                            <!-- <a href="<?php the_permalink(); ?>" class="news__link-text txt-limit">
+                              <?php the_title(); ?>
+                            </a> -->
+                            <div class="news__link-text txt-limit">
+                              <?php the_title(); ?>
+                            </div>
                           </div>
 
                         </div>
 
-                        <!-- 記事タイトル -->
-                        <div class="news__link">
-                          <a href="<?php the_permalink(); ?>" class="news__link-text txt-limit">
-                            <?php the_title(); ?>
-                          </a>
-                        </div>
-
-                      </div>
+                      </a>
 
                     </li>
                   <?php endwhile; ?>

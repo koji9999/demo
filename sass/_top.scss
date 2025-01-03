@@ -577,6 +577,8 @@
 
 .works__card-body {
     margin-left: 50px;
+    display: flex;
+    flex-direction: column;
     @include mq("md") {
         margin-left: 18px;
     }
@@ -923,9 +925,9 @@
     transition: transform .3s;
 }
 
-.news__link:hover::after {
-    transform: scale(1, 1);
-}
+// .news__link:hover::after {
+//     transform: scale(1, 1);
+// }
 
 .news__more-wrap {
 
