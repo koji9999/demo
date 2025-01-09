@@ -102,11 +102,17 @@ window.addEventListener("DOMContentLoaded", () => {
 
 // スクロールにメニューを追従
 (function(){
+  // console.log("aaaaa")
   const container = document.getElementById('news__container'); // コンテンツエリアを囲む要素
+  // console.log("bbbbb")
   const aside = document.getElementById('aside');         // サイドメニュー要素
+  // console.log("ccccc")
   const offsetY = 20;  // ピッタリ上にくっつかないように少し余白を持たせる
+  // console.log("ddddd")
   container.style.minHeight = aside.clientHeight + 'px';
+  // console.log("eeeee")
   window.addEventListener('scroll',()=>{
+    // console.log("fffff")
     const containerRect = container.getBoundingClientRect();
     const isReachBottom = (aside,containerRect,offsetY)=>{
       if( aside.clientHeight < window.innerHeight ){

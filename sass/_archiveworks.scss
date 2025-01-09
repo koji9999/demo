@@ -9,7 +9,6 @@
     display: flex;
     padding-bottom: 30px;
     border-bottom: 1px solid $gray03;
-    // align-items: flex-start;
 
     opacity: 0;
     transition: 1s ease;
@@ -42,6 +41,11 @@
     width: 160px;
     height: auto;
     aspect-ratio: 1/1;
+    @include mq("md") {
+        width: auto;
+        height: 100px;
+        aspect-ratio: 130/100;
+    }
 }
 
 .archive-works__text-wrapper {
@@ -49,7 +53,8 @@
 
     display: flex;
     flex-direction: column;
-    // justify-content: space-between;
+
+    width: 100%;
 }
 
 .archive-works__information {
@@ -60,14 +65,6 @@
 .archive-works__tag-list {
     display: flex;
 }
-
-// ★削除する（以下使用箇所確認後）
-//   ● archive-works.php	Works一覧
-//   ● taxonomy.php		    Worksカテゴリ一覧
-//   ● front-page.php	    TOP
-// .archive-works__date-wrapper {
-//     margin-top: auto;
-// }
 
 .archive-works__date {
     margin-top: auto;

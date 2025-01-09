@@ -149,7 +149,8 @@
 // #region ドロワー
 
 .drawer-menu {
-    position: absolute;
+    // position: absolute;
+    position: fixed;
     z-index: 5000;
     top: 0;
     left: 0;
@@ -701,9 +702,11 @@
 
 .news__left {
     padding-right: 90px;
+    width: 24%;
     @include mq("md") {
         border-right: none;
         padding-right: 0;
+        width: 100%;
     }
 }
 
@@ -754,6 +757,8 @@
     opacity: 0;
     transition: 1s ease;
 
+    display: inline-block;
+
     position: relative;
 }
 
@@ -794,6 +799,13 @@
 
 .news__right.news__right--non-left-border {
     border-left: initial;
+}
+
+.news__right.news__right--width-percent {
+    width: 76%;
+    @include mq("md") {
+        width: 100%;
+    }
 }
 
 .news__content {
@@ -950,6 +962,9 @@
 .news__container-top {
     display: flex;
     width: 100%;
+    @include mq("md") {
+        flex-direction: column;
+    }
 }
 
 // #endregion
@@ -978,7 +993,7 @@ $offsetY:20px;
     top: 0;
     // max-height: calc(100vh - 20px); /* offsetY分をマイナス */
     max-height: calc(100vh - #{$offsetY});
-    overflow: auto;
+    // overflow: auto;
     @include mq("md") {
         position: initial;
         left: initial;

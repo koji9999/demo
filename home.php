@@ -144,9 +144,6 @@
 
                           <!-- 記事タイトル -->
                           <div class="news__link">
-                            <!-- <a href="<?php the_permalink(); ?>" class="news__link-text txt-limit">
-                              <?php the_title(); ?>
-                            </a> -->
                             <div class="news__link-text txt-limit">
                               <?php the_title(); ?>
                             </div>

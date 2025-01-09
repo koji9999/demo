@@ -164,9 +164,6 @@
 
                           <!-- 記事タイトル -->
                           <div class="news__link">
-                            <!-- <a href="<?php the_permalink(); ?>" class="news__link-text txt-limit">
-                              <?php the_title(); ?>
-                            </a> -->
                             <div class="news__link-text txt-limit">
                                 <?php the_title(); ?>
                             </div>
@@ -175,9 +172,6 @@
                         </div>
 
                         <!-- 日付 -->
-                        <!-- <div class="archive-works__date-wrapper">
-                          <time class="archive-works__date" datetime="<?php echo get_the_date('Y-m-d'); ?>"><?php echo get_the_date('Y.m.d'); ?></time>
-                        </div> -->
                         <time class="archive-works__date" datetime="<?php echo get_the_date('Y-m-d'); ?>"><?php echo get_the_date('Y.m.d'); ?></time>
 
                       </div>
@@ -185,7 +179,7 @@
                     </a>
 
                   </li>
-                  <!-- </li> -->
+
                   <?php endwhile; ?>
                   <?php wp_reset_postdata(); ?>
                 </ul>

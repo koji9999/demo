@@ -170,9 +170,6 @@
 
                     <!-- 記事タイトル -->
                     <div class="news__link">
-                      <!-- <a href="<?php the_permalink(); ?>" class="news__link-text txt-limit">
-                        <?php the_title(); ?>
-                      </a> -->
                       <div class="news__link-text txt-limit">
                         <?php the_title(); ?>
                       </div>
@@ -186,9 +183,6 @@
                   </div>
 
                   <!-- 日付 -->
-                  <!-- <div class="archive-works__date-wrapper">
-                    <time class="archive-works__date" datetime="<?php echo get_the_date('Y-m-d'); ?>"><?php echo get_the_date('Y.m.d'); ?></time>
-                  </div> -->
                   <time class="archive-works__date" datetime="<?php echo get_the_date('Y-m-d'); ?>"><?php echo get_the_date('Y.m.d'); ?></time>
 
                 </div>
@@ -219,7 +213,7 @@
       <div class="news__container-top">
 
         <!-- 左側 -->
-        <div class="news__left" id="aside">
+        <div class="news__left">
 
           <h1 class="news__title title slide_left">News</h1>
           <div class="news__nav-upper-margin"></div>
@@ -282,7 +276,7 @@
         </div>
 
         <!-- 右側 -->
-        <div class="news__right">
+        <div class="news__right news__right--width-percent">
 
           <div class="news__contents">
 
@@ -341,9 +335,6 @@
 
                           <!-- 記事タイトル -->
                           <div class="news__link">
-                            <!-- <a href="<?php the_permalink(); ?>" class="news__link-text txt-limit">
-                              <?php the_title(); ?>
-                            </a> -->
                             <div class="news__link-text txt-limit">
                               <?php the_title(); ?>
                             </div>
