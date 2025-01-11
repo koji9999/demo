@@ -54,7 +54,7 @@
     display: flex;
     flex-direction: column;
 
-    width: 100%;
+    width: calc(100% - 160px - 30px);
 }
 
 .archive-works__information {

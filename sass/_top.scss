@@ -972,13 +972,29 @@
 //------------------------------
 // #region スクロールにメニューを追従
 
+// .news__container {
+//     position: relative;
+//     padding-left: 264px;
+//     width: 100%;
+//     @include mq("md") {
+//         position: initial;
+//         padding: 0;
+//     }
+// }
+
 .news__container {
-    position: relative;
-    padding-left: 264px;
+    display: flex;
     width: 100%;
     @include mq("md") {
         position: initial;
-        padding: 0;
+    }
+}
+
+.aside-sticky {
+    position: sticky;
+    top: 20px;
+    @include mq("md") {
+        position: initial;
     }
 }
 

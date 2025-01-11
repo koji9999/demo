@@ -33,10 +33,12 @@
     <div class="news__inner inner">
 
       <!-- コンテナ -->
-      <div class="news__container" id="news__container">
+      <!-- <div class="news__container" id="news__container"> -->
+      <div class="news__container">
 
         <!-- 左側 -->
-        <div class="aside" id="aside">
+        <!-- <div class="aside" id="aside"> -->
+        <div class="aside-sticky">
 
           <nav class="news__nav">
             <ul class="news__categories">
