@@ -10,7 +10,8 @@
           <img src="<?php echo esc_url(get_theme_file_uri("/images/works-mv-img.jpg")); ?>" alt="" class="news-mv__img lower-mv__img" loading="lazy">
           <div class="news-mv__title-wrapper lower-mv__title-wrapper slide_left">
             <p class="news-mv__title lower-mv__title">Works</p>
-            <p class="news-mv__sub-title lower-mv__sub-title">タクソノミー別一覧</p>
+            <!-- <p class="news-mv__sub-title lower-mv__sub-title">タクソノミー別一覧</p> -->
+            <p class="news-mv__sub-title lower-mv__sub-title">制作実績</p>
           </div>
         </div>
 
@@ -26,16 +27,19 @@
   </div>
 
   <!-- newsセクション -->
-  <section class="news news--back-white">
+  <!-- <section class="news news--back-white"> -->
+  <section class="news-page">
     <div class="news__inner inner">
 
       <!-- コンテナ -->
-      <div class="news__container" id="news__container">
+      <!-- <div class="news__container" id="news__container"> -->
+      <div class="news__container">
 
         <!-- 左側 -->
-        <div class="aside" id="aside">
+        <!-- <div class="aside" id="aside"> -->
+        <div class="aside-sticky">
 
-          <nav class="news__nav">
+          <nav class="news__nav news__nav--noborder">
 
             <ul class="news__categories">
               <?php
@@ -59,7 +63,7 @@
                 'number'  => 5
               ]);
 
-              echo '<li class="news__category">';
+              echo '<li class="news__category news__category--works">';
               $home_class = (is_post_type_archive()) ? 'is-tab-active' : '';
               $home_link = sprintf(
                 //通常投稿一覧ページへのaタグに付与するクラスを指定できる
@@ -75,7 +79,7 @@
               // タームのリンク
               if ($terms) {
                 foreach ($terms as $term) {
-                  echo '<li class="news__category">';
+                  echo '<li class="news__category news__category--works">';
                   // カレントクラスに付与するクラスを指定できる
                   // echo $term->term_id;
                   // $term_class = ($current_term_id === $term->term_id) ? 'is-active' : '';
@@ -111,7 +115,7 @@
               $genre_slug = get_query_var('genre');
               $args = [
                 "post_type" => "works",
-                // "posts_per_page" => 5,
+                "posts_per_page" => 10,
                 'tax_query' => [
                   [
                     'taxonomy' => 'genre',
@@ -124,13 +128,19 @@
               ?>
 
               <?php if ($the_query->have_posts()) : ?>
-                <ul class="news__list">
+                <!-- <ul class="news__list"> -->
+                <ul class="date-news__list">
                   <?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
                   <li class="archive-works__item fade_down">
 
                     <a href="<?php the_permalink(); ?>" class="archive-works__item-link">
 
-                      <?php the_post_thumbnail( 'full', ['class' => 'archive-works__img']); ?>
+                      <!-- <?php the_post_thumbnail( 'full', ['class' => 'archive-works__img']); ?> -->
+                      <?php if (has_post_thumbnail()) : ?>
+                        <?php the_post_thumbnail('full', ['class' => 'archive-works__img']); ?>
+                      <?php else : ?>
+                        <img class="archive-works__img" src="<?php echo esc_url(get_theme_file_uri("/images/noimage.jpg")); ?>" alt="NoImage画像" />
+                      <?php endif; ?>
 
                       <div class="archive-works__text-wrapper">
 
@@ -163,9 +173,12 @@
                           </div>
 
                           <!-- 記事タイトル -->
-                          <div class="news__link">
-                            <div class="news__link-text txt-limit">
-                                <?php the_title(); ?>
+                          <!-- <div class="news__link"> -->
+                          <div class="archive-works__link">
+                            <!-- <div class="news__link-text txt-limit"> -->
+                            <!-- <div class="news__link-text works-page__txt-limit"> -->
+                            <div class="news__link-text works-page__txt-limit2">
+                              <?php the_title(); ?>
                             </div>
                           </div>
 
@@ -189,14 +202,16 @@
             </div>
 
             <!-- ページネーション -->
-            <?php
-            $args = [
-              'mid_size' => 1,
-              'prev_text' => '<img src="' . esc_url(get_theme_file_uri("/images/icon-arrow-prev.svg")) . '" alt="" class="pagination__arrow">',
-              'next_text' => '<img src="' . esc_url(get_theme_file_uri("/images/icon-arrow-next.svg")) . '" alt="" class="pagination__arrow">',
-            ];
-            the_posts_pagination($args);
-            ?>
+            <div class="news-pc-pagination md-none">
+              <?php
+              $args = [
+                'mid_size' => 1,
+                'prev_text' => '<img src="' . esc_url(get_theme_file_uri("/images/icon-arrow-prev.svg")) . '" alt="" class="pagination__arrow">',
+                'next_text' => '<img src="' . esc_url(get_theme_file_uri("/images/icon-arrow-next.svg")) . '" alt="" class="pagination__arrow">',
+              ];
+              the_posts_pagination($args);
+              ?>
+            </div>
 
           </div>
 
@@ -205,6 +220,19 @@
       </div>
 
     </div>
+
+    <!-- ページネーション SP専用 -->
+    <div class="news-sp-pagination__inner md-show">
+      <?php
+      $args = [
+        'mid_size' => 1,
+        'prev_text' => '<img src="' . esc_url(get_theme_file_uri("/images/icon-arrow-prev.svg")) . '" alt="" class="pagination__arrow">',
+        'next_text' => '<img src="' . esc_url(get_theme_file_uri("/images/icon-arrow-next.svg")) . '" alt="" class="pagination__arrow">',
+      ];
+      the_posts_pagination($args);
+      ?>
+    </div>
+
   </section>
 
 </main>

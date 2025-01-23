@@ -11,7 +11,7 @@
         <div class="footer1__inner">
           <p class="footer1__text1">輸入車の購入や修理のご相談などお気軽にお問い合わせください。</p>
           <a href="<?php echo esc_url(home_url("/contact")) ?>" class="footer1__contact-button bgleft"><span><i class="fa-regular fa-envelope"></i>お問い合わせ</span></a>
-          <a href="" class="footer1__tel-button"><i class="fa-solid fa-phone"></i>0000-000-000</a>
+          <a href="tel:0312345678" class="footer1__tel-button"><i class="fa-solid fa-phone"></i>03-1234-5678</a>
           <p class="footer1__text2">受付時間 : 火曜日を除く 10：00～18：00</p>
         </div>
       </div>
@@ -27,9 +27,14 @@
 
             <div class="footer2__icons">
               <ul class="footer2__icon-list">
-                <li class="footer2__icon-item"><a href="https://www.facebook.com/"><i class="fa-brands fa-facebook"></i></a></li>
+                <!-- <li class="footer2__icon-item"><a href="https://www.facebook.com/"><i class="fa-brands fa-facebook"></i></a></li>
                 <li class="footer2__icon-item"><a href="https://x.com/"><i class="fa-brands fa-twitter"></i></a></li>
-                <li class="footer2__icon-item"><a href="https://www.instagram.com/"><i class="fa-brands fa-instagram"></i></a></li>
+                <li class="footer2__icon-item"><a href="https://www.instagram.com/"><i class="fa-brands fa-instagram"></i></a></li> -->
+
+                <li class="footer2__icon-item"><a href="https://www.facebook.com/sharer/sharer.php?u=<?php the_permalink(); ?>" target="_blank"><i class="fa-brands fa-facebook"></i></a></li>
+                <li class="footer2__icon-item"><a href="http://twitter.com/share?text=<?php echo urlencode(the_title_attribute('echo=0')); ?>&url=<?php the_permalink(); ?>" rel="nofollow" target="_blank"><i class="fa-brands fa-twitter"></i></a></li>
+                <li class="footer2__icon-item"><a href="https://www.instagram.com/" target="_blank"><i class="fa-brands fa-instagram"></i></a></li>
+
               </ul>
             </div>
           </div>

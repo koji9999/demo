@@ -77,13 +77,16 @@
         </ul>
         <ul class="drawer-menu__icons">
           <li class="drawer-menu__icon">
-            <a href="https://www.facebook.com/"><i class="fa-brands fa-facebook"></i></a>
+            <!-- <a href="https://www.facebook.com/"><i class="fa-brands fa-facebook"></i></a> -->
+            <a href="https://www.facebook.com/sharer/sharer.php?u=<?php the_permalink(); ?>" target="_blank"><i class="fa-brands fa-facebook"></i></a>
           </li>
           <li class="drawer-menu__icon">
-            <a href="https://x.com/"><i class="fa-brands fa-twitter"></i></a>
+            <!-- <a href="https://x.com/"><i class="fa-brands fa-twitter"></i></a> -->
+            <a href="http://twitter.com/share?text=<?php echo urlencode(the_title_attribute('echo=0')); ?>&url=<?php the_permalink(); ?>" rel="nofollow" target="_blank"><i class="fa-brands fa-twitter"></i></a>
           </li>
           <li class="drawer-menu__icon">
-            <a href="https://www.instagram.com/"><i class="fa-brands fa-instagram"></i></a>
+            <!-- <a href="https://www.instagram.com/"><i class="fa-brands fa-instagram"></i></a> -->
+            <a href="https://www.instagram.com/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
           </li>
         </ul>
       </div>

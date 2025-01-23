@@ -251,10 +251,10 @@
 }
 
 .mv__inner {
-    padding: 0 80px;
+    padding: 0 25px;
     height: inherit;
-
     display: flex;
+    justify-content: center;
     @include mq("md") {
         flex-direction: column;
         padding: 0 10px;
@@ -398,6 +398,7 @@
     color: $black;
     @include mq("md") {
         margin-top: 30px;
+        font-size: 14px;
     }
 }
 
@@ -566,13 +567,24 @@
     }
 }
 
+// .works__img {
+//     width: 28.4%;
+//     height: auto;
+//     aspect-ratio: 290/229;
+
+//     @include mq("md") {
+//         width: 40.7%;
+//     }
+// }
+
 .works__img {
-    width: 28.4%;
+    width: 290px;
     height: auto;
     aspect-ratio: 290/229;
 
     @include mq("md") {
-        width: 40.7%;
+        width: 120px;
+        aspect-ratio: 120/90;
     }
 }
 
@@ -681,6 +693,14 @@
 //------------------------------
 // #region TOP News
 
+// 下層ページの場合パディング値が違うため分ける
+.news-page {
+    padding: 60px 0 120px 0;
+    @include mq("md") {
+        padding: 30px 0 80px;
+    }
+}
+
 .news {
     background-color: $bg;
     padding: 120px 0;
@@ -731,12 +751,24 @@
     }
 }
 
+.news__nav.news__nav--noborder {
+    @include mq("md") {
+        border-bottom: unset;
+    }
+}
+
 .news__categories {
     @include mq("md") {
         display: flex;
         flex-wrap: wrap;
         row-gap: 15px;
         column-gap: 15px;
+    }
+}
+
+.news__category.news__category--works {
+    @include mq("md") {
+        flex: 1 1 auto;
     }
 }
 
@@ -788,13 +820,19 @@
 .news__right {
     border-left: 1px solid $gray03;
     padding-left: 60px;
-    width: 100%;
+    // width: 100%;
+    width: calc(100% - 264px);
     @include mq("md") {
         margin-left: 0;
         padding-left: 20px;
         padding-right: 20px;
         border-left: initial;
+        width: 100%;
     }
+}
+
+.news__right.news__right--width-full {
+    width: 100%;
 }
 
 .news__right.news__right--non-left-border {
@@ -882,7 +920,7 @@
 }
 
 .news__link-text {
-    margin-top: 26px;
+    // margin-top: 26px;
     font-weight: $medium;
     color: $black;
     @include mq("md") {
@@ -891,14 +929,41 @@
     }
 }
 
+.news__link-text.news__link-text--works {
+    font-size: 24px;
+    @include mq("md") {
+        font-size: 14px;
+    }
+}
+
 .news__link-text:hover {
     opacity: 1;
     cursor: pointer;
 }
 
+.archive-works__link {
+    display: inline-block;
+    margin-top: 30px;
+    max-width: 100%;    // width 100%から変更
+    position: relative;
+    @include mq("md") {
+        margin-top: 10px;
+    }
+}
+
+.works__link {
+    display: inline-block;
+    margin-top: 30px;
+    max-width: 100%;    // width 100%から変更
+    position: relative;
+    @include mq("md") {
+        margin-top: 12px;
+    }
+}
+
 .news__link {
     display: inline-block;
-    // margin-top: 26px;
+    margin-top: 26px;
 
     // width: 100%;    // 追加
     max-width: 100%;    // width 100%から変更
@@ -918,6 +983,9 @@
     //     font-size: 14px;
     //     line-height: 1.643;
     // }
+    @include mq("md") {
+        margin-top: 20px;
+    }
 }
 
 // .news__link:hover {
@@ -984,8 +1052,10 @@
 
 .news__container {
     display: flex;
+    align-items: flex-start;
     width: 100%;
     @include mq("md") {
+        display: block;
         position: initial;
     }
 }
@@ -993,49 +1063,52 @@
 .aside-sticky {
     position: sticky;
     top: 20px;
+    width: 264px;
+    // background-color: aqua;  // ★デバッグ用
     @include mq("md") {
         position: initial;
+        width: 100%;
     }
 }
 
-$offsetY:20px;
+// $offsetY:20px;
 
-.aside{
-    // width: 150px; /* サイドメニューの幅 */
-    // padding-bottom: 40px;
-    position: absolute;
-    left: 0;
-    // left: 25px;
-    top: 0;
-    // max-height: calc(100vh - 20px); /* offsetY分をマイナス */
-    max-height: calc(100vh - #{$offsetY});
-    // overflow: auto;
-    @include mq("md") {
-        position: initial;
-        left: initial;
-        top: initial;
-    }
-}
+// .aside{
+//     // width: 150px; /* サイドメニューの幅 */
+//     // padding-bottom: 40px;
+//     position: absolute;
+//     left: 0;
+//     // left: 25px;
+//     top: 0;
+//     // max-height: calc(100vh - 20px); /* offsetY分をマイナス */
+//     max-height: calc(100vh - #{$offsetY});
+//     // overflow: auto;
+//     @include mq("md") {
+//         position: initial;
+//         left: initial;
+//         top: initial;
+//     }
+// }
 
-.aside.is-fixed{
-    position: fixed;
-    top: $offsetY;
-    @include mq("md") {
-        position: initial;
-        top: initial;
-    }
-}
+// .aside.is-fixed{
+//     position: fixed;
+//     top: $offsetY;
+//     @include mq("md") {
+//         position: initial;
+//         top: initial;
+//     }
+// }
 
-.aside.is-fixed.is-end{
-    position: absolute;
-    top: auto;
-    bottom: 0;
-    @include mq("md") {
-        position: initial;
-        top: initial;
-        bottom: initial;
-    }
-}
+// .aside.is-fixed.is-end{
+//     position: absolute;
+//     top: auto;
+//     bottom: 0;
+//     @include mq("md") {
+//         position: initial;
+//         top: initial;
+//         bottom: initial;
+//     }
+// }
 
 // #endregion
 

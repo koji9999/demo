@@ -29,6 +29,12 @@
     width: 100%;
 }
 
+.archive-works__item-link.archive-works__item-link--top {
+    @include mq("md") {
+        align-items: flex-start;
+    }
+}
+
 .archive-works__item-link:hover {
     opacity: 1;
 }
@@ -41,6 +47,7 @@
     width: 160px;
     height: auto;
     aspect-ratio: 1/1;
+    object-fit: cover;
     @include mq("md") {
         width: auto;
         height: 100px;
@@ -50,11 +57,13 @@
 
 .archive-works__text-wrapper {
     margin-left: 30px;
-
     display: flex;
     flex-direction: column;
-
     width: calc(100% - 160px - 30px);
+    @include mq("md") {
+        margin-left: 15px;
+        width: calc(100% - 130px - 15px);
+    }
 }
 
 .archive-works__information {
@@ -72,6 +81,18 @@
     font-size: 12px;
     color: $gray02;
     @include mq("md") {
+        margin-top: 8px;
+        font-size: 10px;
+    }
+}
+
+.works__date {
+    margin-top: auto;
+    font-weight: $bold;
+    font-size: 12px;
+    color: $gray02;
+    @include mq("md") {
+        margin-top: 12px;
         font-size: 10px;
     }
 }

@@ -61,6 +61,73 @@
         </div>
       </article>
 
+      <div class="news-pc-pagination md-none">
+
+        <aside class="detail__side">
+          <div class="detail__group">
+            <div class="detail__side-title">最新記事</div>
+            <?php
+            $args = [
+              "post_type" => "post",
+              "posts_per_page" => 5,
+              "orderby" => "date",
+              "order" => "DESC",
+            ];
+            $the_query = new WP_Query($args);
+            ?>
+            <?php if ($the_query->have_posts()) : ?>
+              <ul class="detail__list">
+                <?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
+                  <li class="detail__article">
+                    <a href="<?php the_permalink(); ?>" class="detail__link">
+                      <?php if (has_post_thumbnail()) : ?>
+                        <?php the_post_thumbnail('full', ['class' => 'detail__img']); ?>
+                      <?php else : ?>
+                        <img class="detail__img" src="<?php echo esc_url(get_theme_file_uri("/images/noimage.jpg")); ?>" alt="NoImage画像" />
+                      <?php endif; ?>
+                      <div class="detail__text">
+                        <h3 class="detail__summary"><?php the_title(); ?></h3>
+                        <time class="detail__day" datetime="<?php echo get_the_date('Y-m-d'); ?>"><?php echo get_the_date('Y.m.d'); ?></time>
+                      </div>
+                    </a>
+                  </li>
+                <?php endwhile; ?>
+                <?php wp_reset_postdata(); ?>
+              </ul>
+            <?php else : ?>
+              <p>記事が投稿されていません</p>
+            <?php endif; ?>
+
+            <div class="detail__side-title">アーカイブ</div>
+            <ul class="detail__list-archive">
+              <!-- <?php wp_get_archives('type=monthly&limit=12'); ?> -->
+              <?php wp_get_archives('type=monthly&limit=12'); ?>
+            </ul>
+
+            <div class="detail__side-title">カテゴリー</div>
+            <ul class="detail__list">
+            <?php
+              $categories = get_categories();
+              $cnt = 0;
+              foreach ($categories as $category) {
+                echo '<li class="detail__item"><a class="detail__link-category" href="' . get_category_link($category->term_id) . '">' . $category->name . '</a></li>';
+                $cnt += 1;
+                if ($cnt >= 20) {
+                  break;  // 条件分岐で出力数を制限してみた
+                }
+              }
+              ?>
+            </ul>
+
+          </div>
+
+        </aside>
+
+      </div>
+
+    </div>
+
+    <div class="detail-sp-side__inner md-show">
       <aside class="detail__side">
         <div class="detail__group">
           <div class="detail__side-title">最新記事</div>
@@ -120,8 +187,8 @@
         </div>
 
       </aside>
-
     </div>
+
   </div>
 
 </main>

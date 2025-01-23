@@ -26,17 +26,19 @@
   </div>
 
   <!-- newsセクション -->
-  <section class="news news--back-white">
+  <!-- <section class="news news--back-white"> -->
+  <section class="news-page">
     <div class="news__inner inner">
 
       <!-- 右側 -->
-      <div class="news__right news__right--non-left-border">
+      <div class="news__right news__right--non-left-border news__right--width-full">
 
         <div class="news__contents">
 
           <div class="news__content js-tab-content is-tab-active">
             <?php if (have_posts()) : ?>
-              <ul class="news__list">
+              <!-- <ul class="news__list"> -->
+              <ul class="date-news__list">
                 <?php while (have_posts()) : the_post(); ?>
                   <li class="news__item fade_down">
 
@@ -78,7 +80,8 @@
 
                         <!-- 記事タイトル -->
                         <div class="news__link">
-                          <div class="news__link-text txt-limit">
+                          <!-- <div class="news__link-text txt-limit"> -->
+                          <div class="news__link-text news-page__txt-limit">
                             <?php the_title(); ?>
                           </div>
                         </div>
@@ -96,20 +99,35 @@
           </div>
 
           <!-- ページネーション -->
-          <?php
-          $args = [
-            'mid_size' => 2,
-            'prev_text' => '<img src="' . esc_url(get_theme_file_uri("/images/icon-arrow-prev.svg")) . '" alt="" class="pagination__arrow">',
-            'next_text' => '<img src="' . esc_url(get_theme_file_uri("/images/icon-arrow-next.svg")) . '" alt="" class="pagination__arrow">',
-          ];
-          the_posts_pagination($args);
-          ?>
+          <div class="news-pc-pagination md-none">
+            <?php
+            $args = [
+              'mid_size' => 1,
+              'prev_text' => '<img src="' . esc_url(get_theme_file_uri("/images/icon-arrow-prev.svg")) . '" alt="" class="pagination__arrow">',
+              'next_text' => '<img src="' . esc_url(get_theme_file_uri("/images/icon-arrow-next.svg")) . '" alt="" class="pagination__arrow">',
+            ];
+            the_posts_pagination($args);
+            ?>
+          </div>
 
         </div>
 
       </div>
 
     </div>
+
+    <!-- ページネーション SP専用 -->
+    <div class="news-sp-pagination__inner md-show">
+      <?php
+      $args = [
+        'mid_size' => 1,
+        'prev_text' => '<img src="' . esc_url(get_theme_file_uri("/images/icon-arrow-prev.svg")) . '" alt="" class="pagination__arrow">',
+        'next_text' => '<img src="' . esc_url(get_theme_file_uri("/images/icon-arrow-next.svg")) . '" alt="" class="pagination__arrow">',
+      ];
+      the_posts_pagination($args);
+      ?>
+    </div>
+
   </section>
 
 </main>

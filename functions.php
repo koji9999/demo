@@ -37,7 +37,7 @@ function custom_posts_per_page($query)
         // カスタム投稿のスラッグを記述
         if (is_post_type_archive('works')) {
             // 表示件数を指定
-            $query->set('posts_per_page', 5);
+            $query->set('posts_per_page', 1);
         }
     }
 }

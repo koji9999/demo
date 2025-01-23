@@ -124,6 +124,7 @@
       $args = [
         "post_type" => "works",
         "posts_per_page" => 3,
+        // "posts_per_page" => 20,
       ];
       $the_query = new WP_Query($args);
       ?>
@@ -134,9 +135,14 @@
           <li class="works__card">
             <div class="works__card-inner fade_down">
 
-              <a href="<?php the_permalink(); ?>" class="archive-works__item-link">
+              <a href="<?php the_permalink(); ?>" class="archive-works__item-link archive-works__item-link--top">
 
-                <?php the_post_thumbnail( 'full', ['class' => 'works__img']); ?>
+                <!-- <?php the_post_thumbnail( 'full', ['class' => 'works__img']); ?> -->
+                <?php if (has_post_thumbnail()) : ?>
+                  <?php the_post_thumbnail('full', ['class' => 'works__img']); ?>
+                <?php else : ?>
+                  <img class="works__img" src="<?php echo esc_url(get_theme_file_uri("/images/noimage.jpg")); ?>" alt="NoImage画像" />
+                <?php endif; ?>
 
                 <div class="works__card-body">
 
@@ -169,8 +175,11 @@
                     </div>
 
                     <!-- 記事タイトル -->
-                    <div class="news__link">
-                      <div class="news__link-text txt-limit">
+                    <!-- <div class="news__link"> -->
+                    <div class="works__link">
+                      <!-- <div class="news__link-text txt-limit"> -->
+                      <div class="news__link-text news__link-text--works top-page-works-section__txt-limit top-page-sp-works-section__txt-limit">
+                      <!-- <div class="news__link-text news__link-text--works works-page__txt-limit2"> -->
                         <?php the_title(); ?>
                       </div>
                     </div>
@@ -183,7 +192,8 @@
                   </div>
 
                   <!-- 日付 -->
-                  <time class="archive-works__date" datetime="<?php echo get_the_date('Y-m-d'); ?>"><?php echo get_the_date('Y.m.d'); ?></time>
+                  <!-- <time class="archive-works__date" datetime="<?php echo get_the_date('Y-m-d'); ?>"><?php echo get_the_date('Y.m.d'); ?></time> -->
+                  <time class="works__date" datetime="<?php echo get_the_date('Y-m-d'); ?>"><?php echo get_the_date('Y.m.d'); ?></time>
 
                 </div>
 
@@ -335,7 +345,8 @@
 
                           <!-- 記事タイトル -->
                           <div class="news__link">
-                            <div class="news__link-text txt-limit">
+                            <!-- <div class="news__link-text txt-limit"> -->
+                            <div class="news__link-text news-page__txt-limit">
                               <?php the_title(); ?>
                             </div>
                           </div>
@@ -355,7 +366,7 @@
             <!-- ページネーション -->
             <?php
             $args = [
-              'mid_size' => 2,
+              'mid_size' => 1,
               'prev_text' => '<img src="' . esc_url(get_theme_file_uri("/images/icon-arrow-prev.svg")) . '" alt="" class="pagination__arrow">',
               'next_text' => '<img src="' . esc_url(get_theme_file_uri("/images/icon-arrow-next.svg")) . '" alt="" class="pagination__arrow">',
             ];

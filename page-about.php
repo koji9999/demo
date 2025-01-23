@@ -80,55 +80,59 @@
   </div>
 
   <!-- 会社概要 -->
-  <div id="about-profile" class="about-profile">
-    <div class="about-profile__inner inner">
-      <p class="about-profile__sub-title lower-sub-title">会社概要</p>
-      <h2 class="about-profile__title lower-title">Company Profile</h2>
+  <!-- <div id="about-profile" class="about-profile"> -->
+  <div class="about-profile">
+    <!-- <div class="about-profile__inner inner"> -->
+    <div  id="about-profile" class="about-profile__inner-wrapper">
+      <div class="about-profile__inner inner">
+        <p class="about-profile__sub-title lower-sub-title">会社概要</p>
+        <h2 class="about-profile__title lower-title">Company Profile</h2>
 
-      <!-- リスト -->
-      <ul class="about-profile__list">
-        <li class="about-profile__item">
-          <p class="about-profile__name">会社名</p>
-          <p class="about-profile__value">株式会社Excitecode</p>
-        </li>
-        <li class="about-profile__item">
-          <p class="about-profile__name">所在地</p>
-          <div class="about-profile__place-wrapper">
-            <p class="about-profile__value">〒000-0000</p>
-            <p class="about-profile__value about-profile__address">
-              <?php the_field("custom-address"); ?>
-            </p>
-          </div>
-        </li>
-        <li class="about-profile__item">
-          <p class="about-profile__name">設立</p>
-          <p class="about-profile__value">2015年12月10日</p>
-        </li>
-        <li class="about-profile__item">
-          <p class="about-profile__name">代表取締役</p>
-          <p class="about-profile__value">田中　太郎</p>
-        </li>
-        <li class="about-profile__item">
-          <p class="about-profile__name">事業内容</p>
-          <div class="about-profile__value-wrapper">
-            <ul class="about-profile__value-list">
-              <li class="about-profile__value-item">
-                <p class="about-profile__value">自動車販売（新車、中古車）古物No.第00000000号</p>
-              </li>
-              <li class="about-profile__value-item">
-                <p class="about-profile__value">自動車整備（国産車、輸入車）<br class="sp-show">陸運局認証工場　認証No.0-0000</p>
-              </li>
-              <li class="about-profile__value-item">
-                <p class="about-profile__value">輸入車販売（自動車、自動車関連部品）</p>
-              </li>
-              <li class="about-profile__value-item">
-                <p class="about-profile__value">保険代理店<br class="sp-show">（ABC損害保険株式会社、DFG損害保険株式会社）</p>
-              </li>
-            </ul>
-          </div>
-        </li>
-      </ul>
+        <!-- リスト -->
+        <ul class="about-profile__list">
+          <li class="about-profile__item">
+            <p class="about-profile__name">会社名</p>
+            <p class="about-profile__value">株式会社Excitecode</p>
+          </li>
+          <li class="about-profile__item">
+            <p class="about-profile__name">所在地</p>
+            <div class="about-profile__place-wrapper">
+              <p class="about-profile__value">〒000-0000</p>
+              <p class="about-profile__value about-profile__address">
+                <?php the_field("custom-address"); ?>
+              </p>
+            </div>
+          </li>
+          <li class="about-profile__item">
+            <p class="about-profile__name">設立</p>
+            <p class="about-profile__value">2015年12月10日</p>
+          </li>
+          <li class="about-profile__item">
+            <p class="about-profile__name">代表取締役</p>
+            <p class="about-profile__value">田中　太郎</p>
+          </li>
+          <li class="about-profile__item">
+            <p class="about-profile__name">事業内容</p>
+            <div class="about-profile__value-wrapper">
+              <ul class="about-profile__value-list">
+                <li class="about-profile__value-item">
+                  <p class="about-profile__value">自動車販売（新車、中古車）古物No.第00000000号</p>
+                </li>
+                <li class="about-profile__value-item">
+                  <p class="about-profile__value">自動車整備（国産車、輸入車）<br class="sp-show">陸運局認証工場　認証No.0-0000</p>
+                </li>
+                <li class="about-profile__value-item">
+                  <p class="about-profile__value">輸入車販売（自動車、自動車関連部品）</p>
+                </li>
+                <li class="about-profile__value-item">
+                  <p class="about-profile__value">保険代理店<br class="sp-show">（ABC損害保険株式会社、DFG損害保険株式会社）</p>
+                </li>
+              </ul>
+            </div>
+          </li>
+        </ul>
 
+      </div>
     </div>
 
     <!-- スライド -->

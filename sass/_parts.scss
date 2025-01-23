@@ -13,6 +13,51 @@
     text-overflow: ellipsis;
 }
 
+.top-page-works-section__txt-limit {
+    overflow: hidden;
+    display: -webkit-box ;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    @include mq("md") {
+        -webkit-line-clamp: 3;
+    }
+}
+
+.top-page-works-section__txt-limit.none {
+    overflow: unset;
+    display: block;
+    -webkit-box-orient: unset;
+    -webkit-line-clamp: unset;
+    @include mq("md") {
+        -webkit-line-clamp: unset;
+    }
+}
+
+.news-page__txt-limit {
+    overflow: hidden;
+    display: -webkit-box ;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    @include mq("md") {
+        -webkit-line-clamp: 2;
+    }
+}
+
+.works-page__txt-limit {
+    overflow: hidden;
+    display: -webkit-box ;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    // border: 1px solid red; /* デバッグ用 */
+    @include mq("md") {
+        -webkit-line-clamp: 3;
+    }
+}
+
+.works-page__txt-limit2 {
+    // border: 1px solid red; /* デバッグ用 */
+}
+
 .post__fv {
     // margin-top: 80px;
     margin-bottom: 80px;
@@ -43,6 +88,7 @@
     @include mq("md") {
         margin-top: 40px;
         justify-content: center;
+        // justify-content: space-between;
     }
 }
 
@@ -81,12 +127,14 @@
 .page-numbers.prev {
     @include mq("md") {
         justify-content: left;
+        width: 20px;
     }
 }
 
 .page-numbers.next {
     @include mq("md") {
         justify-content: right;
+        width: 20px;
     }
 }
 
@@ -413,6 +461,24 @@
 .inner.inner--sp-padding-none {
     @include mq("md") {
         padding: 0;
+    }
+}
+
+.news-sp-pagination__inner {
+    max-width: 1150px;
+    margin-inline: auto;
+    padding: 0 25px;
+    @include mq("md") {
+        padding: 0 34px;
+    }
+}
+
+.detail-sp-side__inner {
+    max-width: 1150px;
+    margin-inline: auto;
+    padding: 0 25px;
+    @include mq("md") {
+        padding: 0 15px;
     }
 }
 
