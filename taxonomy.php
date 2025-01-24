@@ -27,16 +27,13 @@
   </div>
 
   <!-- newsセクション -->
-  <!-- <section class="news news--back-white"> -->
   <section class="news-page">
     <div class="news__inner inner">
 
       <!-- コンテナ -->
-      <!-- <div class="news__container" id="news__container"> -->
       <div class="news__container">
 
         <!-- 左側 -->
-        <!-- <div class="aside" id="aside"> -->
         <div class="aside-sticky">
 
           <nav class="news__nav news__nav--noborder">
@@ -128,7 +125,6 @@
               ?>
 
               <?php if ($the_query->have_posts()) : ?>
-                <!-- <ul class="news__list"> -->
                 <ul class="date-news__list">
                   <?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
                   <li class="archive-works__item fade_down">
@@ -173,10 +169,7 @@
                           </div>
 
                           <!-- 記事タイトル -->
-                          <!-- <div class="news__link"> -->
                           <div class="archive-works__link">
-                            <!-- <div class="news__link-text txt-limit"> -->
-                            <!-- <div class="news__link-text works-page__txt-limit"> -->
                             <div class="news__link-text works-page__txt-limit2">
                               <?php the_title(); ?>
                             </div>

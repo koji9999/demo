@@ -26,7 +26,6 @@
   </div>
 
   <!-- newsセクション -->
-  <!-- <section class="news news--back-white"> -->
   <section class="news-page">
     <div class="news__inner inner">
 
@@ -37,7 +36,6 @@
 
           <div class="news__content js-tab-content is-tab-active">
             <?php if (have_posts()) : ?>
-              <!-- <ul class="news__list"> -->
               <ul class="date-news__list">
                 <?php while (have_posts()) : the_post(); ?>
                   <li class="news__item fade_down">
@@ -80,7 +78,6 @@
 
                         <!-- 記事タイトル -->
                         <div class="news__link">
-                          <!-- <div class="news__link-text txt-limit"> -->
                           <div class="news__link-text news-page__txt-limit">
                             <?php the_title(); ?>
                           </div>

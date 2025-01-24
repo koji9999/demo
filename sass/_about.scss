@@ -54,7 +54,6 @@
 // #region フィロソフィー
 
 .about-philosophy {
-    // margin-top: 120px;
     margin-top: 30px;
     padding-top: 60px;
     @include mq("md") {
@@ -119,7 +118,6 @@
     margin: 60px 0;
     padding-top: 60px;
     @include mq("md") {
-        // margin: 80px 0;
         margin: 20px 0;
     }
 }
@@ -162,7 +160,6 @@
 
 .about-profile {
     background-color: $bg;
-    // padding: 70px 0 120px;
     padding: 10px 0 120px;
     @include mq("md") {
         padding: 60px 0 80px;
@@ -234,37 +231,33 @@
     }
 }
 
-
-/* コンテナー */
+// コンテナー
 .container {
     margin-top: 120px;
-    // max-width: 900px;
-    // margin: 0 auto;
     @include mq("md") {
         margin-top: 80px;
     }
 }
 
-/* スライダーのwrapper */
+// スライダーのwrapper
 .infinite-slider .swiper-wrapper2 {
     transition-timing-function: linear;
 }
 
-/* スライド */
+// スライド
 .infinite-slider .swiper-slide2 {
-    height: 400px !important; /* 高さを指定 */
+    height: 400px !important; // 高さを指定
     width: auto !important;
     @include mq("md") {
-        height: 150px !important; /* 高さを指定 */
+        height: 150px !important; // 高さを指定
     }
 }
 
-/* スライド内の画像 */
+// スライド内の画像
 .infinite-slider .swiper-slide2 img {
     width: auto;
     height: 100%;
     margin: 0 5px;
-    // aspect-ratio: 480/400;
 }
 
 // #endregion

@@ -80,9 +80,7 @@
   </div>
 
   <!-- 会社概要 -->
-  <!-- <div id="about-profile" class="about-profile"> -->
   <div class="about-profile">
-    <!-- <div class="about-profile__inner inner"> -->
     <div  id="about-profile" class="about-profile__inner-wrapper">
       <div class="about-profile__inner inner">
         <p class="about-profile__sub-title lower-sub-title">会社概要</p>

@@ -175,11 +175,8 @@
                     </div>
 
                     <!-- 記事タイトル -->
-                    <!-- <div class="news__link"> -->
                     <div class="works__link">
-                      <!-- <div class="news__link-text txt-limit"> -->
                       <div class="news__link-text news__link-text--works top-page-works-section__txt-limit top-page-sp-works-section__txt-limit">
-                      <!-- <div class="news__link-text news__link-text--works works-page__txt-limit2"> -->
                         <?php the_title(); ?>
                       </div>
                     </div>
@@ -192,7 +189,6 @@
                   </div>
 
                   <!-- 日付 -->
-                  <!-- <time class="archive-works__date" datetime="<?php echo get_the_date('Y-m-d'); ?>"><?php echo get_the_date('Y.m.d'); ?></time> -->
                   <time class="works__date" datetime="<?php echo get_the_date('Y-m-d'); ?>"><?php echo get_the_date('Y.m.d'); ?></time>
 
                 </div>
@@ -345,7 +341,6 @@
 
                           <!-- 記事タイトル -->
                           <div class="news__link">
-                            <!-- <div class="news__link-text txt-limit"> -->
                             <div class="news__link-text news-page__txt-limit">
                               <?php the_title(); ?>
                             </div>

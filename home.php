@@ -29,16 +29,13 @@
   </div>
 
   <!-- newsセクション -->
-  <!-- <section class="news news--back-white"> -->
   <section class="news-page">
     <div class="news__inner inner">
 
       <!-- コンテナ -->
-      <!-- <div class="news__container" id="news__container"> -->
       <div class="news__container">
 
         <!-- 左側 -->
-        <!-- <div class="aside" id="aside"> -->
         <div class="aside-sticky">
 
           <nav class="news__nav">
@@ -147,7 +144,6 @@
 
                           <!-- 記事タイトル -->
                           <div class="news__link">
-                            <!-- <div class="news__link-text txt-limit"> -->
                             <div class="news__link-text news-page__txt-limit">
                               <?php the_title(); ?>
                             </div>

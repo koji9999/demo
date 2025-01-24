@@ -149,7 +149,6 @@
 // #region ドロワー
 
 .drawer-menu {
-    // position: absolute;
     position: fixed;
     z-index: 5000;
     top: 0;
@@ -175,7 +174,7 @@
 }
 
 .drawer-menu__items {
-    margin-top: 160px;  //★仮
+    margin-top: 160px;
     display: flex;
     flex-direction: column;
 }
@@ -316,7 +315,7 @@
     width: 100%;
     overflow: hidden;
     @include mq("md") {
-        margin: 0 auto;//調整
+        margin: 0 auto;
     }
 }
 
@@ -368,7 +367,6 @@
 
 .about__img {
     width: 50%;
-    // aspect-ratio: 550/480;   //後ろのセクション追加したらレイアウトシフト起こるかテストして起これば有効にする
     @include mq("md") {
         width: 1000%;
     }
@@ -566,16 +564,6 @@
         padding-bottom: 30px;
     }
 }
-
-// .works__img {
-//     width: 28.4%;
-//     height: auto;
-//     aspect-ratio: 290/229;
-
-//     @include mq("md") {
-//         width: 40.7%;
-//     }
-// }
 
 .works__img {
     width: 290px;
@@ -820,7 +808,6 @@
 .news__right {
     border-left: 1px solid $gray03;
     padding-left: 60px;
-    // width: 100%;
     width: calc(100% - 264px);
     @include mq("md") {
         margin-left: 0;
@@ -884,7 +871,7 @@
 }
 
 .news__text-wrapper {
-    width: 100%;    // 追加
+    width: 100%;
 }
 
 .news__information {
@@ -920,7 +907,6 @@
 }
 
 .news__link-text {
-    // margin-top: 26px;
     font-weight: $medium;
     color: $black;
     @include mq("md") {
@@ -944,7 +930,7 @@
 .archive-works__link {
     display: inline-block;
     margin-top: 30px;
-    max-width: 100%;    // width 100%から変更
+    max-width: 100%;
     position: relative;
     @include mq("md") {
         margin-top: 10px;
@@ -954,7 +940,7 @@
 .works__link {
     display: inline-block;
     margin-top: 30px;
-    max-width: 100%;    // width 100%から変更
+    max-width: 100%;
     position: relative;
     @include mq("md") {
         margin-top: 12px;
@@ -964,34 +950,12 @@
 .news__link {
     display: inline-block;
     margin-top: 26px;
-
-    // width: 100%;    // 追加
-    max-width: 100%;    // width 100%から変更
-
-    // display: -webkit-box;
-    // overflow: hidden;
-    // -webkit-box-orient: vertical;
-    // -webkit-line-clamp: 1;
-
-
-    // font-weight: $medium;
-    // color: $black;
-
+    max-width: 100%;
     position: relative;
-
-    // @include mq("md") {
-    //     font-size: 14px;
-    //     line-height: 1.643;
-    // }
     @include mq("md") {
         margin-top: 20px;
     }
 }
-
-// .news__link:hover {
-//     opacity: 1;
-//     cursor: pointer;
-// }
 
 .news__link::after {
     position: absolute;
@@ -1004,10 +968,6 @@
     transform-origin: left top;
     transition: transform .3s;
 }
-
-// .news__link:hover::after {
-//     transform: scale(1, 1);
-// }
 
 .news__more-wrap {
 
@@ -1040,16 +1000,6 @@
 //------------------------------
 // #region スクロールにメニューを追従
 
-// .news__container {
-//     position: relative;
-//     padding-left: 264px;
-//     width: 100%;
-//     @include mq("md") {
-//         position: initial;
-//         padding: 0;
-//     }
-// }
-
 .news__container {
     display: flex;
     align-items: flex-start;
@@ -1070,45 +1020,6 @@
         width: 100%;
     }
 }
-
-// $offsetY:20px;
-
-// .aside{
-//     // width: 150px; /* サイドメニューの幅 */
-//     // padding-bottom: 40px;
-//     position: absolute;
-//     left: 0;
-//     // left: 25px;
-//     top: 0;
-//     // max-height: calc(100vh - 20px); /* offsetY分をマイナス */
-//     max-height: calc(100vh - #{$offsetY});
-//     // overflow: auto;
-//     @include mq("md") {
-//         position: initial;
-//         left: initial;
-//         top: initial;
-//     }
-// }
-
-// .aside.is-fixed{
-//     position: fixed;
-//     top: $offsetY;
-//     @include mq("md") {
-//         position: initial;
-//         top: initial;
-//     }
-// }
-
-// .aside.is-fixed.is-end{
-//     position: absolute;
-//     top: auto;
-//     bottom: 0;
-//     @include mq("md") {
-//         position: initial;
-//         top: initial;
-//         bottom: initial;
-//     }
-// }
 
 // #endregion
 

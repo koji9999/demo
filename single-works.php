@@ -11,7 +11,6 @@
   </div>
 
   <div class="detail">
-    <!-- <div class="detail__inner inner"> -->
     <div class="single-works__inner">
       <article class="single-works__body">
         <div class="detail__categories">
@@ -44,7 +43,6 @@
         <?php else : ?>
           <img class="detail__thumbnail" src="<?php echo esc_url(get_theme_file_uri("/images/noimage.jpg")); ?>" alt="NoImage画像" />
         <?php endif; ?>
-        <!-- <div class="detail__content"> -->
         <div class="single-works__content">
           <?php the_content(); ?>
         </div>

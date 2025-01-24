@@ -2,7 +2,6 @@
 const limit = document.querySelector(".current-item");
 if (limit != null) {
   const str = limit.textContent;
-  // const len = 50; // 半角50字（全角約25字）
   const len = 10; // 半角10字（全角5字）
   if (str.length > len) {
     limit.textContent = str.substring(0, len) + "…";
@@ -55,21 +54,16 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
-
 function toggleClassForPC() {
   var widthThreshold = 768; // PC表示の幅
   var elements = document.querySelectorAll('.top-page-works-section__txt-limit');
 
   if (window.innerWidth > widthThreshold) {
       elements.forEach(function(el) {
-          // el.classList.add('active');
-          // el.classList.add('pc-only');
           el.classList.remove('none');
       });
   } else {
       elements.forEach(function(el) {
-          // el.classList.remove('active');
-          // el.classList.remove('pc-only');
           el.classList.add('none');
       });
   }
@@ -78,37 +72,6 @@ function toggleClassForPC() {
 window.addEventListener('resize', toggleClassForPC);
 document.addEventListener('DOMContentLoaded', toggleClassForPC);
 
-
-
-// function truncateTitle(selector, maxLength) {
-//   const elements = document.querySelectorAll(selector);
-//   console.log("truncateTitle実行");
-//   elements.forEach(el => {
-//     console.log(el.innerText);
-//     if (el.innerText.length > maxLength) {
-//         el.innerText = el.innerText.substring(0, maxLength) + '...';
-//     }
-//   });
-// }
-
-// 使用例
-// truncateTitle('.works-page__txt-limit2', 24); // 第２引数に指定した文字数以上の場合に省略
-// truncateTitle('.works-page__txt-limit2', 46); // 第２引数に指定した文字数以上の場合に省略
-
-// const limit2 = document.querySelector(".works-page__txt-limit2");
-// if (limit2 != null) {
-//   console.log("limit2 is not null");
-//   const str2 = limit2.textContent;
-//   console.log("str2 : 「" + str2 + "」");
-//   const len2 = 6; // 半角20字（全角10字）
-//   if (str2.length > len2) {
-//     console.log("str2.length : " + str2.length);
-//     console.log("len2        : " + len2);
-//     limit2.textContent = str2.substring(0, len2) + "…";
-//   }
-// } else {
-//   console.log("limit2 is null");
-// }
 
 // ハンバーガーメニュー
 $(function () {
@@ -198,62 +161,3 @@ window.addEventListener("DOMContentLoaded", () => {
     },
   });
 });
-
-
-// // スクロールにメニューを追従
-// (function(){
-//   // console.log("aaaaa")
-//   const container = document.getElementById('news__container'); // コンテンツエリアを囲む要素
-//   // console.log("bbbbb")
-//   const aside = document.getElementById('aside');         // サイドメニュー要素
-//   // console.log("ccccc")
-//   const offsetY = 20;  // ピッタリ上にくっつかないように少し余白を持たせる
-//   // console.log("ddddd")
-//   container.style.minHeight = aside.clientHeight + 'px';
-//   // console.log("eeeee")
-//   window.addEventListener('scroll',()=>{
-//     // console.log("fffff")
-//     const containerRect = container.getBoundingClientRect();
-//     const isReachBottom = (aside,containerRect,offsetY)=>{
-//       if( aside.clientHeight < window.innerHeight ){
-//         if(containerRect.bottom <= aside.clientHeight + offsetY){
-//           return true;
-//         }else{
-//           return false;
-//         }
-//       }else{
-//         if(containerRect.bottom < window.innerHeight - offsetY){
-//           return true;
-//         }else{
-//           return false;
-//         }
-//       }
-//     }
-
-//     // console.log("containerRect.top : " + containerRect.top)
-
-//     // ↓↓↓↓↓図で説明↓↓↓↓
-//     if( isReachBottom(aside,containerRect,offsetY) ){
-//       // ①メインコンテンツの一番下までスクロールしたとき
-//       aside.classList.add('is-end');
-//       aside.classList.add('is-fixed');
-//       aside.style.left = '';
-//       // console.log("一番下まで到達  containerRect.top : " + containerRect.top)
-//     }else if( containerRect.top < offsetY ){
-//       // ②メインコンテンツ内をスクロールしているとき
-//       aside.classList.add('is-fixed');
-//       aside.classList.remove('is-end');
-//       aside.style.left = containerRect.left + 'px';
-//       // console.log("スクロール中    containerRect.top : " + containerRect.top)
-//     }else{
-//       // ③メインコンテンツより上をスクロールしているとき
-//       aside.classList.remove('is-fixed');
-//       aside.classList.remove('is-end');
-//       aside.style.left = '';
-//       // console.log("上             containerRect.top : " + containerRect.top)
-//     }
-//   });
-// })();
-
-
-
